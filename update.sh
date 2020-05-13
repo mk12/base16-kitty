@@ -60,6 +60,10 @@ main() {
         curl -L "$schemes_url" | awk '/^[^ ]+: https:\/\// { print $2; }'
     )
 
+    # Switch to the alternate screen since there is tons of output.
+    trap 'tput rmcup' EXIT
+    tput smcup
+
     for url in ${to_clone[@]+"${to_clone[@]}"}; do
         clone_repo "$url"
     done
