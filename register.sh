@@ -24,9 +24,11 @@ main() {
         name=${name%-scheme}
     fi
     cd "$(dirname "$0")"
-    if grep -q "^$name:" "local.yaml"; then
-        echo "warning: overwrite existing entry"
-        sed -i '' "/^$name:/d" "local.yaml"
+    if [[ -f "local.yaml" ]]; then
+        if grep -q "^$name:" "local.yaml"; then
+            echo "warning: overwrite existing entry"
+            sed -i '' "/^$name:/d" "local.yaml"
+        fi
     fi
     echo "$name: $path" >> "local.yaml"
 }
