@@ -18,7 +18,8 @@ clone_repo() {
     local name=${name%-scheme}
     local path="build/schemes/$name"
     echo "Cloning $url ..."
-    git clone "$url" "$path" &
+    # Use shallow clone to avoid wasting space.
+    git clone --depth 1 "$url" "$path" &
 }
 
 pull_repo() {
