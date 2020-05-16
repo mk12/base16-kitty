@@ -4,7 +4,7 @@ My version of [Base16][] for [kitty][].
 
 It departs from the official [kdrag0n/base16-kitty][] repository in a few ways:
 
-- Different color mapping choices. For example, I set bright white to the emphasized text shade.
+- Different color mapping choices. For example, I use a blue cursor.
 - No support for 256-color variants. These [defeat the purpose of Base16][issue].
 - A build setup geared around only building themes for kitty, not all the templates.
 - Ability to override theme repositories. I use this for my version of [Solarized][].
