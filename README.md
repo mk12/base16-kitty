@@ -5,17 +5,18 @@ My version of [Base16][] for [kitty][].
 It departs from the official [kdrag0n/base16-kitty][] repository in a few ways:
 
 - Different color mapping choices. For example, I use a blue cursor.
-- No support for 256-color variants. These [defeat the purpose of Base16][issue].
+- Always use 256-color variants, but not via base16-shell, which [defeats the purpose of Base16][issue].
 - A build setup geared around only building themes for kitty, not all the templates.
 - Ability to override theme repositories. I use this for my version of [Solarized][].
 
 ## Usage
 
-1. `make deps` to install [pybase16-builder][]
-2. `make update` to clone all scheme repositories
-3. `make` to build kitty colors in `./colors`
+1. `asdf install`
+2. `pip install pybase16-builder`
+3. `./update.sh`
+4. `./build.sh`
 
-To use a local scheme repository, run `./register.sh path/to/repo`. Next time you run `make update`, it will include this (overriding the official repository if there is one of the same name).
+To use a local scheme repository, run `./register.sh path/to/repo`. Next time you run `update.sh`, it will include this (overriding the official repository if there is one of the same name).
 
 ## License
 
