@@ -11,10 +11,9 @@ It departs from the official [kdrag0n/base16-kitty][] repository in a few ways:
 
 ## Usage
 
-1. `asdf install`
-2. `pip install pybase16-builder`
-3. `./update.sh`
-4. `./build.sh`
+1. `pip3 install pybase16-builder`
+2. `./update.sh`
+3. `./build.sh`
 
 To use a local scheme repository, run `./register.sh path/to/repo`. Next time you run `update.sh`, it will include this (overriding the official repository if there is one of the same name).
 
