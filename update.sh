@@ -40,7 +40,9 @@ main() {
 
     if [[ -f "local.yaml" ]]; then
         while read -r name path; do
-            name=${name%:}
+            local name=${name%:}
+            # Remove first in case it already exists (as symlink or directory).
+            rm -rf "build/schemes/$name"
             ln -sf "$path" "build/schemes/$name"
         done < "local.yaml"
     fi
@@ -52,7 +54,10 @@ main() {
         local name=${url##*/base16-}
         local name=${name%-scheme}
         local path="build/schemes/$name"
-        if [[ -d "$path" ]]; then
+        if [[ -L "$path" ]]; then
+            # Link made from local.yaml above, do nothing.
+            :
+        elif [[ -d "$path" ]]; then
             to_pull+=("$name")
         else
             to_clone+=("$url")
