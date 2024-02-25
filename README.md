@@ -27,5 +27,5 @@ Base16 Kitty is available under the MIT License; see [LICENSE](LICENSE.md) for d
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [kdrag0n/base16-kitty]: https://github.com/kdrag0n/base16-kitty
 [Solarized]: https://github.com/mk12/base16-solarized-scheme
-[issue]: https://github.com/chriskempson/base16/issues/174
+[issue]: https://web.archive.org/web/20210124190257/https://github.com/chriskempson/base16/issues/174
 [pybase16-builder]: https://github.com/InspectorMustache/base16-builder-python
